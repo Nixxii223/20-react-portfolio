@@ -8,12 +8,12 @@ const Header = () => {
 
             <h1 class="life-savers-bold">Nicki Barrett</h1>
             <nav >
-                <ul class="list">
-                    <li><Link to="/homepage">Home</Link></li>
+                <a>
+                    <li><Link to="/homepage">About Me</Link></li>
                     <li><Link to="/portfolio">Portfolio</Link></li>
                     <li><Link to="/resume">Resume</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
-                </ul>
+                </a>
             </nav>
         </header>
     );
