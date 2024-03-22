@@ -1,21 +1,65 @@
-import * as React from 'react';
+import React from 'react';
 
-export default function Portfolio() {
+const projects = [
+    
+    {
+        title: 'Another project1',
+        image: 'https://via.placeholder.com/150',
+        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
+        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
+    },
+    {
+        title: 'Another project2',
+        image: 'https://via.placeholder.com/150',
+        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
+        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
+    },
+    {
+        title: 'Another project3',
+        image: 'https://via.placeholder.com/150',
+        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
+        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
+    },
+    {
+        title: 'Another project4',
+        image: 'https://via.placeholder.com/150',
+        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
+        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
+    },{
+        title: 'Moodsic',
+        image: 'https://via.placeholder.com/150',
+        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
+        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
+    },
+    {
+        title: 'Another project5',
+        image: 'https://via.placeholder.com/150',
+        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
+        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
+    },
+
+];
+
+function Project({ project }) {
     return (
-      <div>
-        <h2>Portfolio</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-          velit, lobortis ut magna varius, blandit rhoncus sem. Morbi lacinia nisi
-          ac dui fermentum, sed luctus urna tincidunt. Etiam ut feugiat ex. Cras
-          non risus mi. Curabitur mattis rutrum ipsum, ut aliquet urna imperdiet
-          ac. Sed nec nulla aliquam, bibendum odio eget, vestibulum tortor. Cras
-          rutrum ligula in tincidunt commodo. Morbi sit amet mollis orci, in
-          tristique ex. Donec nec ornare elit. Donec blandit est sed risus feugiat
-          porttitor. Vestibulum molestie hendrerit massa non consequat. Vestibulum
-          vitae lorem tortor. In elementum ultricies tempus. Interdum et malesuada
-          fames ac ante ipsum primis in faucibus.
-        </p>
-      </div>
+        <div>
+            <h2>{project.title}</h2>
+            <a href={project.appLink} target="_blank" rel="noopener noreferrer">
+                <img src={project.image} alt={project.title} />
+            </a>
+            <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
+                GitHub Repository
+            </a>
+        </div>
     );
-  }
+}
+
+export default function Projects() {
+    return (
+        <div>
+            {projects.map((project) => (
+                <Project key={project.title} project={project} />
+            ))}
+        </div>
+    );
+}
