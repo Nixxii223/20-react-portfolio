@@ -1,19 +1,14 @@
-export default function Home() {
+import * as React from 'react';
+
+export default function Homepage() {
     return (
-      <div>
-        <h1>Home Page</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-          velit, lobortis ut magna varius, blandit rhoncus sem. Morbi lacinia nisi
-          ac dui fermentum, sed luctus urna tincidunt. Etiam ut feugiat ex. Cras
-          non risus mi. Curabitur mattis rutrum ipsum, ut aliquet urna imperdiet
-          ac. Sed nec nulla aliquam, bibendum odio eget, vestibulum tortor. Cras
-          rutrum ligula in tincidunt commodo. Morbi sit amet mollis orci, in
-          tristique ex. Donec nec ornare elit. Donec blandit est sed risus feugiat
-          porttitor. Vestibulum molestie hendrerit massa non consequat. Vestibulum
-          vitae lorem tortor. In elementum ultricies tempus. Interdum et malesuada
-          fames ac ante ipsum primis in faucibus.
-        </p>
-      </div>
+        <div>
+            <h1>About Me</h1>
+            <p>
+                Hello, my name is Nicki Barrett and I am currently studying full stack web development through the University of Utah in partnership with edX. I also hold a Master of Science degree in Speech-Language Pathology and have spent the past ten years working as a feeding therapist in the Newborn ICU. My goal is to merge my love of feeding therapy with my new-found love of technology to create applications that work for therapists, rather than against them.
+
+                Check out my portfolio with projects showcasing my abilities in full stack coding!
+            </p>
+        </div>
     );
-  }
+}
