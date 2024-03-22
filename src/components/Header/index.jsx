@@ -1,19 +1,63 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './styles.css';
 
 const Header = () => {
     return (
         <header>
 
-            <h1 class="life-savers-bold">Nicki Barrett</h1>
-            <nav >
-                <a>
-                    <li><Link to="/homepage">About Me</Link></li>
-                    <li><Link to="/portfolio">Portfolio</Link></li>
-                    <li><Link to="/resume">Resume</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                </a>
+            <h1 className="life-savers-bold">Nicki Barrett</h1>
+            <nav>
+                <ul>
+                    <NavLink
+                        to="/homepage"
+                        style={({ isActive }) => {
+                            return {
+                                fontWeight: isActive ? "bold" : "",
+                                color: isActive ? "#75C9C8" : "#e6aace",
+                                textDecorationLine: "none",
+                            };
+                        }}
+                    >
+                        About Me
+                    </NavLink>
+                    <NavLink
+                        to="/portfolio"
+                        style={({ isActive }) => {
+                            return {
+                                fontWeight: isActive ? "bold" : "",
+                                color: isActive ? "#75C9C8" : "#e6aace",
+                                textDecorationLine: "none",
+                            };
+                        }}
+                    >
+                        Portfolio
+                    </NavLink>
+                    <NavLink
+                        to="/resume"
+                        style={({ isActive }) => {
+                            return {
+                                fontWeight: isActive ? "bold" : "",
+                                color: isActive ? "#75C9C8" : "#e6aace",
+                                textDecorationLine: "none",
+                            };
+                        }}
+                    >
+                        Resume
+                    </NavLink>
+                    <NavLink
+                        to="/contact"
+                        style={({ isActive }) => {
+                            return {
+                                fontWeight: isActive ? "bold" : "",
+                                color: isActive ? "#75C9C8" : "#e6aace",
+                                textDecorationLine: "none",
+                            };
+                        }}
+                    >
+                        Contact
+                    </NavLink>
+                </ul>
             </nav>
         </header>
     );

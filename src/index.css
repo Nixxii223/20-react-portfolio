@@ -64,3 +64,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@media only screen and (min-width: 375px) and (max-width: 667px) {
+  header {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 667px) {
+  body {
+    flex-direction: column;
+  }
+}

@@ -52,37 +52,15 @@ h1 {
     font-style: normal;
   }
 
-  a {
+ ul {
     list-style-type: none;
     padding: 0;
     display: flex;
+    justify-content: space-between;
     gap: 1em;
-    justify-content: right;
-  }  
-  
-  a:link {
     font-weight: 500;
-    color: #e6aace;
-    text-decoration: inherit;
-  }
-
-  a {
-    font-weight: 500;
-    color: #e6aace;
-    text-decoration: inherit;
-  }
-  
-  a:visited {
-    color: #d81e5b;
-  } 
-
-  a:hover {
-    color: #fcfc62;
-  }
-
-  a:active {
-    color: #75c9c8;
-  }
-
+    font-size: 1.2em;
+    
+    }
   
   
