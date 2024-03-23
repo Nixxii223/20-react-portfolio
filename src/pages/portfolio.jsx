@@ -44,7 +44,7 @@ const projects = [
 function Project({ project }) {
     return (
         <div>
-            <h2>{project.title}</h2>
+            <h2 className="birthstone-bounce-medium">{project.title}</h2>
             <a href={project.appLink} target="_blank" rel="noopener noreferrer">
                 <img src={project.image} alt={project.title} />
             </a>

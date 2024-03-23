@@ -3,7 +3,7 @@ import './styles.css';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='poppins-regular'>
             <p>Made with ❤️ by Nicki Barrett 2024</p>
         </footer>
     );

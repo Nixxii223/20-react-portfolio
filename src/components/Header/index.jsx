@@ -11,7 +11,7 @@ const Header = () => {
                 <h1 className="life-savers-bold">Nicki Barrett</h1>
             </div>
 
-            <nav>
+            <nav className="poppins-regular">
                 <ul>
                     <NavLink
                         to="/homepage"
