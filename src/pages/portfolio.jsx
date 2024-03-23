@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css';
 
 const projects = [
     
@@ -56,7 +57,7 @@ function Project({ project }) {
 
 export default function Projects() {
     return (
-        <div>
+        <div className="projects-container">
             {projects.map((project) => (
                 <Project key={project.title} project={project} />
             ))}

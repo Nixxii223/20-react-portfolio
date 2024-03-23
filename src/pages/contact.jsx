@@ -10,23 +10,41 @@ export default function Contact() {
     const [email, setEmail] = React.useState('');
     const [message, setMessage] = React.useState('');
 
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!name || !phone || !email || !message) {
             alert('All fields required. Please provide all required information.');
         }
+
+        if (name && phone && validateEmail(email) && message) {
+            alert(`Thank you for your message, ${name}! I will be in touch soon.`);
+            setName('');
+            setPhone('');
+            setEmail('');
+            setMessage('');
+        }
+
+        if (!validateEmail(email)) {
+            alert('Please provide a valid email address.');
+        }
     };
+
 
     return (
         <Box component="form"
             onSubmit={handleSubmit}
             sx={{
-                '& .MuiTextField-root': { m: 2, width: '50ch'},
+                '& .MuiTextField-root': { m: 2, width: '50ch' },
             }}
             noValidate
             autoComplete="off">
             <h2>Contact Me</h2>
-            <Stack>
+            <Stack className="contact-form">
                 <TextField
                     required
                     id="outlined-name"
@@ -63,7 +81,7 @@ export default function Contact() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 />
-                
+
             </Stack>
             <Button variant="contained" color="secondary" width="25ch" type="submit">Submit</Button>
         </Box>

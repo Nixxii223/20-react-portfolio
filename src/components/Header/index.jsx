@@ -1,12 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './styles.css';
+import profilePic from '../../images/profile-pic.jpg';
+import './header.css';
 
 const Header = () => {
     return (
         <header>
+            <div>
+                <img src={profilePic} className="profile-pic" alt="Nicki Barrett" />
+                <h1 className="life-savers-bold">Nicki Barrett</h1>
+            </div>
 
-            <h1 className="life-savers-bold">Nicki Barrett</h1>
             <nav>
                 <ul>
                     <NavLink
