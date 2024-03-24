@@ -21,7 +21,7 @@ import { Container } from '@mui/material';
 export default function TitlebarImageList() {
     return (
         <Container>
-            <ImageList sx={{ width: 1000, height: 1000 }} cols={matches ? 3 : 1}>
+            <ImageList className='flex' sx={{ width: 1000, height: 1000 }}>
                 <h2 className="birthstone-bounce-medium">Portfolio</h2>
                 <p className="poppins-regular"></p>
                 {itemData.map((item) => (
