@@ -15,11 +15,11 @@ export default function Footer() {
                         <GitHubIcon />
                     </IconButton>
                 </Link>
-                <Link href="www.linkedin.com/in/nicki-barrett" target="_blank" rel="noopener noreferrer">
+                <Link href="https://linkedin.com/in/nicki-barrett" target="_blank" rel="noopener noreferrer">
                     <IconButton>
                         <LinkedInIcon />
                     </IconButton>
-                </Link>
+                </Link>                
             </Box>
             <p className='poppins-regular'>Made with ❤️ by Nicki Barrett 2024</p>
         </Container>
