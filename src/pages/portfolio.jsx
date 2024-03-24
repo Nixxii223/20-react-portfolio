@@ -1,66 +1,121 @@
-import React from 'react';
+import * as React from 'react';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
+import IconButton from '@mui/material/IconButton';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
+import yellowLights from '../images/yellow-lights.png';
+import blueLights from '../images/blue-lights.png';
+import fallLights from '../images/fall-lights.png';
+import multiLights from '../images/multi-lights.png';
+import pinkBlueLights from '../images/pink-blue-lights.png';
+import drabLights from '../images/drab-lights.png';
+import goldLights from '../images/gold-lights.png';
+import pinkGreenLights from '../images/pink-green-lights.png';
+import bluePurpleLights from '../images/blue-purple-lights.png';
 import './styles.css';
+import { Container } from '@mui/material';
 
-const projects = [
-    
-    {
-        title: 'Another project1',
-        image: 'https://via.placeholder.com/150',
-        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
-        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
-    },
-    {
-        title: 'Another project2',
-        image: 'https://via.placeholder.com/150',
-        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
-        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
-    },
-    {
-        title: 'Another project3',
-        image: 'https://via.placeholder.com/150',
-        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
-        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
-    },
-    {
-        title: 'Another project4',
-        image: 'https://via.placeholder.com/150',
-        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
-        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
-    },{
-        title: 'Moodsic',
-        image: 'https://via.placeholder.com/150',
-        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
-        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
-    },
-    {
-        title: 'Another project5',
-        image: 'https://via.placeholder.com/150',
-        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
-        repoLink: 'https://github.com/DougSpardel/CranBerryStuffing.git',
-    },
 
+export default function TitlebarImageList() {
+    return (
+        <Container>
+            <ImageList sx={{ width: 1000, height: 1000 }} cols={matches ? 3 : 1}>
+                <h2 className="birthstone-bounce-medium">Portfolio</h2>
+                <p className="poppins-regular"></p>
+                {itemData.map((item) => (
+                    <ImageListItem key={item.img}>
+                        <img
+                            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                            src={`${item.img}?w=248&fit=crop&auto=format`}
+                            onClick={() => window.open(item.appLink, '_blank')}
+                            alt={item.title}
+                            loading="lazy"
+                        />
+                        <ImageListItemBar
+                            title={item.title}
+                            subtitle={item.author}
+                            actionIcon={
+                                <IconButton
+                                    sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                                    aria-label={`info about ${item.title}`}
+                                    onClick={() => window.open(item.gitRepo, '_blank')}
+                                >
+                                    <GitHubIcon />
+                                </IconButton>
+                            }
+                        />
+                    </ImageListItem>
+                ))}
+            </ImageList>
+        </Container>
+    );
+}
+
+const itemData = [
+    {
+        img: pinkBlueLights,
+        title: 'Book Nook',
+        appLink: 'https://book-nook-2024-1c3caea5765b.herokuapp.com/',
+        gitRepo: 'https://github.com/HoneyBuzz94/book-nook.git',
+        rows: 2,
+        cols: 2,
+        featured: true,
+    },
+    {
+        img: fallLights,
+        title: 'MoodSic',
+        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
+        gitRepo: 'https://github.com/DougSpardel/CranBerryStuffing.git',
+    },
+    {
+        img: multiLights,
+        title: 'Social Network API (Node.js/Express.js/MongoDB/Mongoose)',
+        appLink: 'https://drive.google.com/file/d/1631aJak8RAaMU4ZOIT86Gji9t3acIe4x/view?usp=sharing',
+        gitRepo: 'https://github.com/Nixxii223/18-Social-Network-API.git',
+    },
+    {
+        img: blueLights,
+        title: 'README Generator (Node.js/Inquirer)',
+        appLink: 'https://drive.google.com/file/d/1HW6022Syl-NSyWZdtTCBOjGcLULfoXSJ/view?usp=sharing',
+        gitRepo: 'https://github.com/Nixxii223/9-readme-generator.git',
+    },
+    {
+        img: drabLights,
+        title: 'E-Commerce Back End (Node.js/Express.js/MySQL)',
+        appLink: 'https://drive.google.com/file/d/1AmqZ7BZKQimn_pwfpPT3522ZaTMz45U5/view?usp=sharing',
+        gitRepo: 'https://github.com/Nixxii223/13-e-commerce-backend.git',
+        cols: 2,
+    },
+    {
+        img: goldLights,
+        title: 'SVG Logo Maker (Node.js/Inquirer/Jest)',
+        appLink: 'https://drive.google.com/file/d/1-ecX3u6XRRlzLcWE_tCAQVpj7iNPEBr9/view?usp=sharing',
+        gitRepo: 'https://github.com/Nixxii223/10-SVG-Logo-Maker.git',
+        cols: 2,
+    },
+    {
+        img: pinkGreenLights,
+        title: 'Weather Dashboard (OpenWeather API)',
+        appLink: 'https://nixxii223.github.io/6-weather-dashboard/',
+        gitRepo: 'https://github.com/Nixxii223/6-weather-dashboard.git',
+        cols: 2,
+    },
+    {
+        img: bluePurpleLights,
+        title: 'Password Generator',
+        appLink: 'https://nixxii223.github.io/3-password-generator-challenge/',
+        gitRepo: 'https://github.com/Nixxii223/3-password-generator-challenge.git',
+        cols: 2,
+    },
+    {
+        img: yellowLights,
+        title: 'Employee Tracker (Node.js/Inquirer)',
+        appLink: 'https://drive.google.com/file/d/1f6ctitVAGGRzqhK9mQfNzlWBSqNx29jU/view?usp=sharing',
+        gitRepo: 'https://github.com/Nixxii223/12-Employee-Tracker.git',
+        rows: 2,
+        cols: 2,
+        featured: true,
+    },
 ];
-
-function Project({ project }) {
-    return (
-        <div>
-            <h2 className="birthstone-bounce-medium">{project.title}</h2>
-            <a href={project.appLink} target="_blank" rel="noopener noreferrer">
-                <img src={project.image} alt={project.title} />
-            </a>
-            <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
-                GitHub Repository
-            </a>
-        </div>
-    );
-}
-
-export default function Projects() {
-    return (
-        <div className="projects-container">
-            {projects.map((project) => (
-                <Project key={project.title} project={project} />
-            ))}
-        </div>
-    );
-}

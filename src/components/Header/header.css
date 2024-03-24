@@ -1,6 +1,7 @@
 header {
   background-color: #faf6f7;
-  margin: 10px;
+  margin: 0;
+  padding: 0;
   width: 100%;
 }
 
@@ -16,7 +17,7 @@ h1 {
   border-radius: 50%;
   height: 70px;
   width: 70px;
-  margin: 0;
+  margin-left: 10px;
   padding: 0;
 }
 
