@@ -20,7 +20,7 @@ import { Container } from '@mui/material';
 
 export default function TitlebarImageList() {
     return (
-        <Container>
+        <Container className="portfolio-container">
             <ImageList className='flex' sx={{ width: 1000, height: 1000 }}>
                 <h2 className="birthstone-bounce-medium">Portfolio</h2>
                 <p className="poppins-regular"></p>
