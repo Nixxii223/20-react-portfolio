@@ -1,10 +1,20 @@
-# React + Vite
+# 20-React-Portfolio
+  
+  ## Description
+  I created this application as a means of demonstrating my web development skills and providing a platform for potential employers to see my resume and contact me.
+  
+  ## Installation
+  N/A
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  ## Usage
+  Use the navigation bar to toggle between the About Me, Portfolio, Resume and Contact pages.
 
-Currently, two official plugins are available:
+  
+  ## License
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
-images via Freepik 
+
+  ## Credits
+  I received help during tutoring sessions with Jaytee Padilla. Images on the Portfolio page were downloaded via Freepik.
