@@ -65,9 +65,9 @@ const itemData = [
     },
     {
         img: fallLights,
-        title: 'MoodSic',
-        appLink: 'https://dougspardel.github.io/CranBerryStuffing/',
-        gitRepo: 'https://github.com/DougSpardel/CranBerryStuffing.git',
+        title: 'Textbook Trade (GraphQL/React/Node.js/Express.js/MongoDB/Mongoose)',
+        appLink: 'https://textbook-trade.onrender.com/',
+        gitRepo: 'https://github.com/camillebagnani/textbook-trade.git',
     },
     {
         img: multiLights,
