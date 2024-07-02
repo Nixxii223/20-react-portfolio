@@ -1,45 +1,28 @@
 import React, { useState } from 'react';
-import { Box, TextField, Button, Stack } from '@mui/material';
+import { Box, TextField, Stack, Button } from '@mui/material';
+import emailjs from 'emailjs-com';
 
-export default function Contact() {
+const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const [touched, setTouched] = useState({
-    name: false,
-    phone: false,
-    email: false,
-    message: false,
-  });
-
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!name || !phone || !email || !message) {
-      alert('All fields required. Please provide all required information.');
-    }
-
-    if (name && phone && validateEmail(email) && message) {
-      alert(`Thank you for your message, ${name}! I will be in touch soon.`);
-      setName('');
-      setPhone('');
-      setEmail('');
-      setMessage('');
-    }
-
-    if (!validateEmail(email)) {
-      alert('Please provide a valid email address.');
-    }
-  };
-
-  const handleBlur = (field) => () => {
-    setTouched({ ...touched, [field]: true });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    emailjs.send('service_xy833bh', 'template_cxo4n9u', {
+      from_name: name,
+      reply_to: email,
+      message: message,
+      to_name: name
+    }, '-i49ofCuUoDiRMutM')
+    .then((response) => {
+       console.log('SUCCESS!', response.status, response.text);
+       alert('Your message has been sent successfully!');
+    }, (err) => {
+       console.log('FAILED...', err);
+       alert('Failed to send the message. Please try again.');
+    });
   };
 
   return (
@@ -59,54 +42,27 @@ export default function Contact() {
           required
           id="outlined-name"
           label="Name"
-          color="secondary"
           value={name}
-          onChange={(e) => setName(e.target.value)}
-          onBlur={handleBlur('name')}
-          error={touched.name && name === ''}
-          helperText={touched.name && name === '' ? 'This field is required' : ''}
-        />
-        <TextField
-          required
-          id="outlined-phone"
-          label="Phone"
-          color="secondary"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          onBlur={handleBlur('phone')}
-          error={touched.phone && phone === ''}
-          helperText={touched.phone && phone === '' ? 'This field is required' : ''}
+          onChange={e => setName(e.target.value)}
         />
         <TextField
           required
           id="outlined-email"
           label="Email"
-          color="secondary"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          onBlur={handleBlur('email')}
-          error={touched.email && email === ''}
-          helperText={touched.email && email === '' ? 'This field is required' : ''}
+          onChange={e => setEmail(e.target.value)}
         />
         <TextField
           required
           id="outlined-message"
-          defaultValue=""
           label="Message"
-          width="auto"
-          multiline
-          rows={5}
-          color="secondary"
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          onBlur={handleBlur('message')}
-          error={touched.message && message === ''}
-          helperText={touched.message && message === '' ? 'This field is required' : ''}
+          onChange={e => setMessage(e.target.value)}
         />
+        <Button type="submit">Send Email</Button>
       </Stack>
-      <Button variant="contained" color="secondary" width="25ch" type="submit">
-        Submit
-      </Button>
     </Box>
   );
-}
+};
+
+export default ContactForm;
