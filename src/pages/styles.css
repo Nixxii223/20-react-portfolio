@@ -1,5 +1,5 @@
 .projects-container {
-    margin-bottom:200px;
+    margin-bottom: 200px;
 }
 
 .contact-form {
@@ -28,3 +28,13 @@
     gap: 1em;
     margin-bottom: 200px;
 }
+
+.image-list-item {
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .image-list-item:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+    cursor: pointer;
+  }

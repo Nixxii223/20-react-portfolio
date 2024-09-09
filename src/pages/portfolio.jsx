@@ -17,21 +17,24 @@ import bluePurpleLights from '../images/blue-purple-lights.png';
 import './styles.css';
 import { Container } from '@mui/material';
 
-
 export default function TitlebarImageList() {
     return (
         <Container className="portfolio-container">
-            <ImageList className='flex' sx={{ width: 1000, height: 1000 }}>
+            <ImageList className='d-flex flex-wrap' sx={{ width: 1000, height: 1000 }}>
                 <h2 className="birthstone-bounce-medium">Portfolio</h2>
                 <p className="poppins-regular"></p>
                 {itemData.map((item) => (
-                    <ImageListItem key={item.img}>
+                    <ImageListItem key={item.img} className="image-list-item m-2">
                         <img
                             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                             src={`${item.img}?w=248&fit=crop&auto=format`}
-                            onClick={() => window.open(item.appLink, '_blank')}
+                            onClick={() => {
+                                alert('You are being redirected to the application.');
+                                window.open(item.appLink, '_blank');
+                            }}
                             alt={item.title}
                             loading="lazy"
+                            className="img-fluid"
                         />
                         <ImageListItemBar
                             title={item.title}
@@ -40,7 +43,10 @@ export default function TitlebarImageList() {
                                 <IconButton
                                     sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                                     aria-label={`info about ${item.title}`}
-                                    onClick={() => window.open(item.gitRepo, '_blank')}
+                                    onClick={() => {
+                                        alert('You are being redirected to the GitHub repository.');
+                                        window.open(item.gitRepo, '_blank');
+                                    }}
                                 >
                                     <GitHubIcon />
                                 </IconButton>
@@ -56,9 +62,8 @@ export default function TitlebarImageList() {
 const itemData = [
     {
         img: pinkBlueLights,
-        title: 'Book Nook',
-        appLink: 'https://book-nook-2024-1c3caea5765b.herokuapp.com/',
-        gitRepo: 'https://github.com/HoneyBuzz94/book-nook.git',
+        title: 'RAG Books',
+        appLink: 'https://ragbooks.com/',
         rows: 2,
         cols: 2,
         featured: true,
